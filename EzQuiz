@@ -1,0 +1,62 @@
+#Module for timer
+from timeit import default_timer
+start = default_timer()
+print(" ")
+print("----------------------")
+print(" ")
+print("Welcome to the quiz!")
+print("A series of questions will be asked with multiple options!!")
+print(" ")
+print("----------------------")
+print(" ")
+print("GOOD LUCK-👍")
+print(" ")
+#Questions are insertable here-
+questions = ("Who is the CEO of SpaceX and tesla as of 2022?",
+              "What is the largest continent on earth?",
+             "Which bird is the largest flightless bird?")
+#options for the respective questions
+options = (("A. Jeff Bezos","B. Elon Musk","C. Justin Bieber","D. Mark Zuckerburg"),
+           ("A. South America","B. Austrailia","C. Asia","D. Antratica"),
+           ("A. Ostrich","B. Penguin","C. Kiwi","D. Flamingo"))
+#answers for the questions need to be inserted here
+answers = ("B","C","A")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("----------------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+    print(" ")
+    print("Enter (A, B, C, D):")
+    guess = input("> ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("Correct!")
+    else:
+        print("Incorrect!")
+        print(f"{answers[question_num]} is the Correct Answer")
+    question_num += 1
+
+print("----------------------")
+print("      ❗ Results ❗       ")
+print("----------------------")
+
+print("Answers: ", end="")
+for answer in answers:
+    print(answer, end=" ")
+print()
+
+print("Guesses: ", end="")
+for guess in guesses:
+    print(guess, end=" ")
+print()
+
+score = int(score / len(questions) * 100)
+print(f"Your score is: {score}%")
+print("Time Taken: ")
+print(default_timer()-start)
