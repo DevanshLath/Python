@@ -1,3 +1,4 @@
+#some stuff may be used from other sources and i fully credit that this is not fully original code
 #Module for timer
 from timeit import default_timer
 start = default_timer()
