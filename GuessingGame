@@ -1,0 +1,28 @@
+import random
+from timeit import default_timer
+start = default_timer()
+
+animal = ("lion","tiger","cheetah","leopard","zebra","monkey","gorilla","giraffe","elephant","wolf")
+answer = random.choice(animal)
+guess_count = 0
+guess_limit = 5
+out_of_guesses = False
+guess = ""
+print("----------Animal Guessing Game----------")
+print(" ")
+while guess != answer and not (out_of_guesses):
+    if guess_count < guess_limit:
+        print(" ")
+        guess = input("Enter a random animal: ")
+        guess_count += 1
+    else:
+        out_of_guesses = True
+if out_of_guesses:
+    print(" ")
+    print("Out of guesses, You Lose!")
+    print("The correct animal was:",answer)
+else:
+    print(" ")
+    print("You Win!")
+    print("Amount of Guesses taken:", guess_count)
+    print("Time Taken:",default_timer()-start)
