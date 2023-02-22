@@ -1,0 +1,10 @@
+# Percentage Calculator
+print(" ")
+print("----------Percentage Calculator----------")
+print(" ")
+achieved = float(input("Enter the number for which you want percentage of: "))
+total = float(input("Enter total number achievable: "))
+answer = achieved / total * 100
+print("Percentage: ",answer)
+print(" ")
+print("Bye!")
